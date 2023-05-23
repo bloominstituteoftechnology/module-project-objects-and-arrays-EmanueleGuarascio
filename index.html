@@ -56,17 +56,14 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice(item, price, priceless) {
-
-        if (price !== undefined) {
-          return {item};
-        } else {
-          priceless = true;
-          return {item} + {priceless};
-        }
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------////
+    function deletePrice(object, item, price) {
+        console.log(object);
+      
+     return object
       }    
     deletePrice()
-
+//------------------------------------------------------------------------------------------------------------------------------------------------------------/////
     // 👉 CHALLENGE 4
     // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
     // 🧠 Note that the argument of the function is missing, you must write it.
@@ -106,8 +103,8 @@
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
     function pushElement(arr, value) {
-      
-
+      arr[arr.length] = value;
+      return arr;
     }
 
     // 👉 CHALLENGE 7
@@ -122,8 +119,18 @@
     // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
+    function stripX(string) {
+      const newString = string.split('');
+      console.log(newString);
+      for (let i in newString) {
+        if (newString[i] === 'x') {
+          newString[i] = '';
+          console.log(newString);
+          const ultimateArray = newString.join('');
+          return ultimateArray;
 
+      }
+    }
     }
 
     // 👉 CHALLENGE 8
@@ -135,7 +142,18 @@
     // ❗ Important Notes:
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
+    function stripChar(string, char) {
+      const newString = string.split('');
+      console.log(newString);
+      console.log(char);
+      for (let i in newString) {
+        if (newString[i] === char) {
+          newString[i] = '';
+          [i++];
+          console.log(newString);
+        }
+        return newString
+      }
 
     }
 
@@ -148,7 +166,7 @@
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
+    function getProps(object) {
 
     }
 
