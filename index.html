@@ -57,8 +57,11 @@
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
     //--------------------------------------------------------------------------------------------------------------------------------------------------------////
-    function deletePrice(object, item, price) {
+    function deletePrice(object) {
         console.log(object);
+        if ('price' !== undefined) {
+          console.log("Curi cazzi");
+        }
       
      return object
       }    
@@ -120,14 +123,16 @@
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
     function stripX(string) {
-      const newString = string.split('');
+      let result = [];
+      let newString = string.split('');
       for (let i in newString) {
-        if (newString[i] === 'x') {
-          newString[i] = '';
-          const ultimateArray = newString.join('');
-          return ultimateArray;
-
-      }
+        let char = newString[i];
+        console.log(char);
+        if (char === 'x') {
+          char = '';
+       //   console.log(result)
+          return result.join('');
+        };
     }
     }
 
@@ -141,19 +146,11 @@
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
     function stripChar(string, char) {
-      const newString = string.split('');
-      console.log(newString);
-      console.log(char);
-      for (let i in newString) {
-        if (newString[i] === char) {
-          newString[i] = '';
-          const newStringTwo= newString.join('');
-          return newStringTwo;
+      const newString = string.split(char);
+      const newStringTwo= newString.join('');
+      return newStringTwo;
 
       }
-
-    }
-  }
 
     // 👉 CHALLENGE 9
     // 🧠 The function getProps takes an object as its argument.
