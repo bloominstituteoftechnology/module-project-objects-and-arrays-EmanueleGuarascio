@@ -121,11 +121,9 @@
     // 🧠 Do not forget to return your rejoined string!
     function stripX(string) {
       const newString = string.split('');
-      console.log(newString);
       for (let i in newString) {
         if (newString[i] === 'x') {
           newString[i] = '';
-          console.log(newString);
           const ultimateArray = newString.join('');
           return ultimateArray;
 
@@ -149,13 +147,13 @@
       for (let i in newString) {
         if (newString[i] === char) {
           newString[i] = '';
-          [i++];
-          console.log(newString);
-        }
-        return newString
+          const newStringTwo= newString.join('');
+          return newStringTwo;
+
       }
 
     }
+  }
 
     // 👉 CHALLENGE 9
     // 🧠 The function getProps takes an object as its argument.
