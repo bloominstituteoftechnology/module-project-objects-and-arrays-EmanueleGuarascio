@@ -167,7 +167,14 @@
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
     function getProps(object) {
-      
+      let result = []
+      for (let property in object) {
+        console.log(property);
+        if (property !== 'age' || property !== 'married') {
+         result = property;
+        }
+      }
+      return result;
 
     }
 
