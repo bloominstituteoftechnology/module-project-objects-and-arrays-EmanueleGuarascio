@@ -31,7 +31,7 @@
       return person;
 
     }
-    buildPeter()
+    
 
     // 👉 CHALLENGE 2
     // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
@@ -46,7 +46,6 @@
       return user;
 
     }
-    buildUser ()
 
     // 👉 CHALLENGE 3
     // 🧠 The function deletePrice takes an object as its argument and deletes its "price" property if it exists.
@@ -56,17 +55,18 @@
     // 🧠 Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    //--------------------------------------------------------------------------------------------------------------------------------------------------------////
-    function deletePrice(object) {
-        console.log(object);
-        if ('price' !== undefined) {
-          console.log("Curi cazzi");
+
+   function deletePrice(object) {
+        if (object.price >= 0) {
+          delete object.price;
+        return object;
+        } else {
+          object["priceless"] = true;
+          return object;
         }
-      
-     return object
-      }    
-    deletePrice()
-//------------------------------------------------------------------------------------------------------------------------------------------------------------/////
+      }
+ 
+
     // 👉 CHALLENGE 4
     // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
     // 🧠 Note that the argument of the function is missing, you must write it.
@@ -128,7 +128,7 @@
       for (let i in split) {
         let char = split[i];
         if (char !== 'x') {
-        result.push(char)
+        result.push(char);
         }
       }
       return result.join('')
@@ -167,6 +167,7 @@
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
     function getProps(object) {
+      
 
     }
 
