@@ -123,18 +123,17 @@
     // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
     // 🧠 Do not forget to return your rejoined string!
     function stripX(string) {
-      let result = [];
-      let newString = string.split('');
-      for (let i in newString) {
-        let char = newString[i];
-        console.log(char);
-        if (char === 'x') {
-          char = '';
-       //   console.log(result)
-          return result.join('');
-        };
+      let result = []
+      let split = string.split('')
+      for (let i in split) {
+        let char = split[i];
+        if (char !== 'x') {
+        result.push(char)
+        }
+      }
+      return result.join('')
     }
-    }
+
 
     // 👉 CHALLENGE 8
     // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
@@ -146,9 +145,15 @@
     // 🧠 Try to solve this problem without looking at how you solved the previous one.
     // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
     function stripChar(string, char) {
-      const newString = string.split(char);
-      const newStringTwo= newString.join('');
-      return newStringTwo;
+      const result = []
+      const newString = string.split('');
+      for (let i in newString) {
+        let myChar = newString[i];
+        if (myChar !== char) {
+          result.push(myChar);
+        }
+      }
+      return result.join('')
 
       }
 
